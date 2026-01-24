@@ -1,9 +1,7 @@
 import { Play, ArrowRight, Calendar, Bell, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden gradient-hero">
+  return <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden gradient-hero">
       {/* Abstract shapes background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
@@ -15,7 +13,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6 bg-card text-center md:text-7xl">
               Transforma Citas Perdidas en{" "}
               <span className="gradient-text">Ingresos Garantizados</span>
             </h1>
@@ -59,41 +57,53 @@ const HeroSection = () => {
 
               {/* Stats Row */}
               <div className="grid grid-cols-4 gap-3 mb-6">
-                {[
-                  { icon: Calendar, label: "Hoy", value: "12" },
-                  { icon: Users, label: "Clientes", value: "847" },
-                  { icon: Bell, label: "Confirmados", value: "98%" },
-                  { icon: TrendingUp, label: "Ingresos", value: "$2.4k" },
-                ].map((stat, i) => (
-                  <div key={i} className="bg-muted/50 rounded-lg p-3 text-center">
+                {[{
+                icon: Calendar,
+                label: "Hoy",
+                value: "12"
+              }, {
+                icon: Users,
+                label: "Clientes",
+                value: "847"
+              }, {
+                icon: Bell,
+                label: "Confirmados",
+                value: "98%"
+              }, {
+                icon: TrendingUp,
+                label: "Ingresos",
+                value: "$2.4k"
+              }].map((stat, i) => <div key={i} className="bg-muted/50 rounded-lg p-3 text-center">
                     <stat.icon className="w-4 h-4 mx-auto mb-1 text-primary" />
                     <p className="text-lg font-bold text-foreground">{stat.value}</p>
                     <p className="text-xs text-muted-foreground">{stat.label}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* Calendar Preview */}
               <div className="bg-muted/30 rounded-lg p-4">
                 <div className="grid grid-cols-7 gap-2 mb-3">
-                  {["L", "M", "X", "J", "V", "S", "D"].map((day) => (
-                    <div key={day} className="text-center text-xs text-muted-foreground font-medium">
+                  {["L", "M", "X", "J", "V", "S", "D"].map(day => <div key={day} className="text-center text-xs text-muted-foreground font-medium">
                       {day}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 <div className="space-y-2">
-                  {[
-                    { time: "09:00", client: "María García", service: "Corte + Color", status: "confirmed" },
-                    { time: "10:30", client: "Carlos López", service: "Masaje Relajante", status: "pending" },
-                    { time: "12:00", client: "Ana Martínez", service: "Manicure", status: "confirmed" },
-                  ].map((appointment, i) => (
-                    <div
-                      key={i}
-                      className={`flex items-center justify-between p-2 rounded-lg ${
-                        appointment.status === "confirmed" ? "bg-accent/10" : "bg-primary/10"
-                      }`}
-                    >
+                  {[{
+                  time: "09:00",
+                  client: "María García",
+                  service: "Corte + Color",
+                  status: "confirmed"
+                }, {
+                  time: "10:30",
+                  client: "Carlos López",
+                  service: "Masaje Relajante",
+                  status: "pending"
+                }, {
+                  time: "12:00",
+                  client: "Ana Martínez",
+                  service: "Manicure",
+                  status: "confirmed"
+                }].map((appointment, i) => <div key={i} className={`flex items-center justify-between p-2 rounded-lg ${appointment.status === "confirmed" ? "bg-accent/10" : "bg-primary/10"}`}>
                       <div className="flex items-center gap-3">
                         <span className="text-xs font-medium text-muted-foreground">{appointment.time}</span>
                         <div>
@@ -101,13 +111,8 @@ const HeroSection = () => {
                           <p className="text-xs text-muted-foreground">{appointment.service}</p>
                         </div>
                       </div>
-                      <div
-                        className={`w-2 h-2 rounded-full ${
-                          appointment.status === "confirmed" ? "bg-accent" : "bg-primary"
-                        }`}
-                      />
-                    </div>
-                  ))}
+                      <div className={`w-2 h-2 rounded-full ${appointment.status === "confirmed" ? "bg-accent" : "bg-primary"}`} />
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -139,8 +144,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
