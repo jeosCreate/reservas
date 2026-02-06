@@ -1,5 +1,7 @@
 import { Play, ArrowRight, Calendar, Bell, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/ui/magnetic-button";
+
 const HeroSection = () => {
   return <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden gradient-hero">
       {/* Abstract shapes background */}
@@ -23,10 +25,12 @@ const HeroSection = () => {
 
             {/* Dual CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
-              <Button size="lg" className="gradient-primary border-0 text-lg px-8 py-6 gap-2">
-                Comenzar Prueba Gratis 14 Días
-                <ArrowRight className="w-5 h-5" />
-              </Button>
+              <MagneticButton>
+                <button className="gradient-primary hover:opacity-90 transition-opacity px-10 text-lg text-white py-4 rounded-full inline-flex items-center gap-2 font-medium">
+                  Comenzar Prueba Gratis 14 Días
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </MagneticButton>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 gap-2">
                 <Play className="w-5 h-5" />
                 Ver Demo en Vivo
