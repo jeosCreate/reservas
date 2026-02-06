@@ -1,0 +1,10 @@
+export { ColorsSection } from "./ColorsSection";
+export { TypographySection } from "./TypographySection";
+export { ButtonsSection } from "./ButtonsSection";
+export { CardsSection } from "./CardsSection";
+export { BadgesSection } from "./BadgesSection";
+export { InputsSection } from "./InputsSection";
+export { AlertsSection } from "./AlertsSection";
+export { TabsSection } from "./TabsSection";
+export { IconsSection } from "./IconsSection";
+export { SpacingSection } from "./SpacingSection";
