@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import { 
   Calendar, 
   CheckCircle, 
@@ -192,9 +193,13 @@ const StyleGuide = () => {
                 <CardTitle className="text-lg">Variantes</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 items-center">
                   <Button>Default</Button>
-                  <Button className="gradient-primary border-0">Gradient Primary</Button>
+                  <MagneticButton>
+                    <button className="gradient-primary hover:opacity-90 transition-opacity px-10 text-lg text-white py-4 rounded-full font-medium">
+                      Gradient Primary
+                    </button>
+                  </MagneticButton>
                   <Button variant="secondary">Secondary</Button>
                   <Button variant="outline">Outline</Button>
                   <Button variant="ghost">Ghost</Button>
